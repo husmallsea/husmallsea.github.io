@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>运行docker容器 | bigsea&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="启动docker  12345678910111213141516171819#启动docker服务service docker start#查看所有镜像docker imagesREPOSITORY                    TAG                 IMAGE ID            CREATED             SIZEtomcat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运行docker容器">
+<meta property="og:url" content="http://yoursite.com/2017/06/14/运行docker容器/index.html">
+<meta property="og:site_name" content="bigsea&#39;s blog">
+<meta property="og:description" content="启动docker  12345678910111213141516171819#启动docker服务service docker start#查看所有镜像docker imagesREPOSITORY                    TAG                 IMAGE ID            CREATED             SIZEtomcat">
+<meta property="og:updated_time" content="2017-06-14T06:11:15.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="运行docker容器">
+<meta name="twitter:description" content="启动docker  12345678910111213141516171819#启动docker服务service docker start#查看所有镜像docker imagesREPOSITORY                    TAG                 IMAGE ID            CREATED             SIZEtomcat">
+  
+    <link rel="alternate" href="/atom.xml" title="bigsea&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">bigsea&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">坚持点滴的记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-运行docker容器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/14/运行docker容器/" class="article-date">
+  <time datetime="2017-06-14T04:38:53.000Z" itemprop="datePublished">2017-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      运行docker容器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a><font color="purple" size="5">启动docker<font></font></font></h1>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#启动docker服务</span></div><div class="line">service docker start</div><div class="line"><span class="comment">#查看所有镜像</span></div><div class="line">docker images</div><div class="line">REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE</div><div class="line">tomcat                        latest              dda2b9b0aefd        4 days ago          339MB</div><div class="line">hub.c.163.com/library/nginx   latest              46102226f2fd        7 weeks ago         109MB</div><div class="line">hello-world                   latest              48b5124b2768        5 months ago        1.84kB</div><div class="line"><span class="comment">#后台启动nginx服务</span></div><div class="line">run -d hub.c.163.com/library/nginx</div><div class="line"><span class="comment">#查看docker中运行的容器</span></div><div class="line">docker ps</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#停止容器服务</span></div><div class="line">docker stop CID(容器进程ID)</div><div class="line"></div><div class="line"><span class="comment">#停止docker服务</span></div><div class="line">service docker stop</div></pre></td></tr></table></figure>
+<h1 id="进入docker内部"><a href="#进入docker内部" class="headerlink" title="进入docker内部"></a><font color="purple" size="5">进入docker内部<font></font></font></h1><p>  一个docker容器好像一个小的虚拟机，可以查看容器内部的所有文件<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#进入容器内部 -i -t代表的含义可以通过 docker exec --help查看</span></div><div class="line">docker <span class="built_in">exec</span> -it CID（容器的进程号） bash</div><div class="line">ls</div><div class="line">bin  boot  dev	etc  home  lib	lib32  lib64  libx32  media  mnt  opt  proc  root  run	sbin  srv  sys	tmp  usr  var</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure></p>
+<h1 id="docker的网络端口映射"><a href="#docker的网络端口映射" class="headerlink" title="docker的网络端口映射"></a><font color="purple" size="5">docker的网络端口映射<font></font></font></h1><p>  docker在自己的虚拟环境中有自己的端口；可以通过 docker ps指令查到；<br>如何将内部的端口与宿主环境中的端口联系起来呢~</p>
+<h2 id="nbsp-nbsp-p指令：指定端口分配"><a href="#nbsp-nbsp-p指令：指定端口分配" class="headerlink" title="&nbsp;&nbsp;-p指令：指定端口分配"></a>&nbsp;&nbsp;<font color="purple" size="3">-p指令：指定端口分配<font></font></font></h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#小写p 指定宿主端口与镜像的端口关联起来</span></div><div class="line">docker run -d -p 8080:80 hub.c.163.com/library/nginx</div></pre></td></tr></table></figure>
+<h2 id="nbsp-nbsp-P指令：随机端口分配"><a href="#nbsp-nbsp-P指令：随机端口分配" class="headerlink" title="&nbsp;&nbsp;-P指令：随机端口分配"></a>&nbsp;&nbsp;<font color="purple" size="3">-P指令：随机端口分配<font></font></font></h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#大写P 随机分配端口号</span></div><div class="line">docker run -d -P  hub.c.163.com/library/nginx</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/14/运行docker容器/" data-id="cj3wipeig0004tkqp60gcarjz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/13/docker镜像下载/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker镜像下载/卸载</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/docker/" style="font-size: 10px;">docker</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/14/运行docker容器/">运行docker容器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker镜像下载/">docker镜像下载/卸载</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker下载安装/">docker下载安装/卸载</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker学习笔记1/">docker学习笔记&lt;1&gt;</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/Elk搭建/">Elk搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 hubigsea<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

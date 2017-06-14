@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>docker学习笔记&lt;1&gt; | bigsea&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#docker官网 why? – 使用docker到底有什么好处？   较官方的解释   对于我目前现状来说，主要是做为微服务的载体使用 how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容命题如下：使用docker安装一个nginx服务器&amp;nbsp;&amp;nbsp;    1 :下载安装/卸载docker(Ubantu)&amp;nbsp;&amp;nbsp;    2 :下载docker镜">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker学习笔记&lt;1&gt;">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/docker学习笔记1/index.html">
+<meta property="og:site_name" content="bigsea&#39;s blog">
+<meta property="og:description" content="#docker官网 why? – 使用docker到底有什么好处？   较官方的解释   对于我目前现状来说，主要是做为微服务的载体使用 how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容命题如下：使用docker安装一个nginx服务器&amp;nbsp;&amp;nbsp;    1 :下载安装/卸载docker(Ubantu)&amp;nbsp;&amp;nbsp;    2 :下载docker镜">
+<meta property="og:updated_time" content="2017-06-14T06:08:26.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker学习笔记&lt;1&gt;">
+<meta name="twitter:description" content="#docker官网 why? – 使用docker到底有什么好处？   较官方的解释   对于我目前现状来说，主要是做为微服务的载体使用 how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容命题如下：使用docker安装一个nginx服务器&amp;nbsp;&amp;nbsp;    1 :下载安装/卸载docker(Ubantu)&amp;nbsp;&amp;nbsp;    2 :下载docker镜">
+  
+    <link rel="alternate" href="/atom.xml" title="bigsea&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">bigsea&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">坚持点滴的记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-docker学习笔记1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/13/docker学习笔记1/" class="article-date">
+  <time datetime="2017-06-13T13:06:28.000Z" itemprop="datePublished">2017-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker学习笔记&lt;1&gt;
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#<a href="https://www.docker.com" target="_blank" rel="external">docker官网</a></p>
+<h1 id="why-–-使用docker到底有什么好处？"><a href="#why-–-使用docker到底有什么好处？" class="headerlink" title="why? – 使用docker到底有什么好处？"></a>why? – 使用docker到底有什么好处？</h1><p>   <a href="http://www.docker.org.cn/docker/16.html" target="_blank" rel="external">较官方的解释</a><br>   对于我目前现状来说，主要是做为微服务的载体使用</p>
+<h1 id="how-–先来写一个小demo，后续再具体介绍docker的一些具体的内容"><a href="#how-–先来写一个小demo，后续再具体介绍docker的一些具体的内容" class="headerlink" title="how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容"></a>how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容</h1><h2 id="命题如下：使用docker安装一个nginx服务器"><a href="#命题如下：使用docker安装一个nginx服务器" class="headerlink" title="命题如下：使用docker安装一个nginx服务器"></a><font color="purple" size="5">命题如下：使用docker安装一个nginx服务器</font></h2><h3 id="nbsp-nbsp-1-下载安装-卸载docker-Ubantu"><a href="#nbsp-nbsp-1-下载安装-卸载docker-Ubantu" class="headerlink" title="&nbsp;&nbsp;    1 :下载安装/卸载docker(Ubantu)"></a>&nbsp;&nbsp;    1 :<a href="http://localhost:4000/2017/06/13/docker下载安装/" target="_blank" rel="external">下载安装/卸载docker(Ubantu)</a></h3><h3 id="nbsp-nbsp-2-下载docker镜像-使用国内镜像加速"><a href="#nbsp-nbsp-2-下载docker镜像-使用国内镜像加速" class="headerlink" title="&nbsp;&nbsp;    2 :下载docker镜像(使用国内镜像加速)"></a>&nbsp;&nbsp;    2 :<a href="http://localhost:4000/2017/06/13/docker镜像下载/" target="_blank" rel="external">下载docker镜像(使用国内镜像加速)</a></h3><h3 id="nbsp-nbsp-3-运行容器"><a href="#nbsp-nbsp-3-运行容器" class="headerlink" title="&nbsp;&nbsp;    3 :运行容器"></a>&nbsp;&nbsp;    3 :<a href="http://localhost:4000/2017/06/14/运行docker容器/" target="_blank" rel="external">运行容器</a></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/13/docker学习笔记1/" data-id="cj3wipei90001tkqp9zjdwh4p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/13/docker下载安装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker下载安装/卸载
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/12/Elk搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Elk搭建</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/docker/" style="font-size: 10px;">docker</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/14/运行docker容器/">运行docker容器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker镜像下载/">docker镜像下载/卸载</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker下载安装/">docker下载安装/卸载</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/docker学习笔记1/">docker学习笔记&lt;1&gt;</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/Elk搭建/">Elk搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 hubigsea<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
