@@ -155,6 +155,355 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-spring-cloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/spring-cloud/">spring-cloud</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/11/spring-cloud/" class="archive-article-date">
+  	<time datetime="2017-07-11T11:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/spring-cloud/spring-cloud-netflix" target="_blank" rel="external">文档地址</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/11/spring-cloud/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-gradle学习笔记-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/25/gradle学习笔记-4/">gradle学习笔记&lt;4&gt;gradle基本理论介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/25/gradle学习笔记-4/" class="archive-article-date">
+  	<time datetime="2017-06-25T06:39:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="">基础理论介绍</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">构建工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/25/gradle学习笔记-4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-gradle学习笔记-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/gradle学习笔记-3/">gradle学习笔记&lt;3&gt;--使用构建工具打包jar包/war包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/20/gradle学习笔记-3/" class="archive-article-date">
+  	<time datetime="2017-06-20T03:21:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong><font size="5" color="purple">使用gradle打包java项目生成jar包</font></strong></p>
+</blockquote>
+<p>  代码结构如下：</p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/594897a530e27.png" alt=""></p>
+<p>  测试类App内容如下：</p>
+<pre><code class="java"><span class="keyword">package</span> com.bigsea.gradle.test1;
+
+<span class="keyword">import</span> java.util.Scanner;
+
+<span class="comment">/**
+ * Created by Administrator on 2017/6/18.
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>{
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>{
+        <span class="keyword">int</span> i = <span class="number">0</span>;
+        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);
+        <span class="keyword">while</span>(++i&gt;<span class="number">0</span>){
+            System.out.println(i+<span class="string">". please input todo item name"</span>);
+            TodoItem todoItem = <span class="keyword">new</span> TodoItem(scanner.nextLine());
+            System.out.println(todoItem);
+        }
+    }
+
+}
+</code></pre>
+<p>  测试bean TodoItem 代码如下：</p>
+<pre><code class="java"><span class="keyword">package</span> com.bigsea.gradle.test1;
+
+<span class="comment">/**
+ * Created by Administrator on 2017/6/18.
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> </span>{
+    <span class="keyword">private</span> String name;
+    <span class="keyword">private</span> <span class="keyword">boolean</span> hasDone;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">TodoItem</span><span class="params">()</span></span>{
+
+    }
+    <span class="function"><span class="keyword">public</span> <span class="title">TodoItem</span><span class="params">(String name,<span class="keyword">boolean</span> hasDone)</span></span>{
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>.hasDone = hasDone;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="title">TodoItem</span><span class="params">(String name)</span></span>{
+        <span class="keyword">this</span>.name = name;
+    }
+
+    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> name;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{
+        <span class="keyword">this</span>.name = name;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHasDone</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> hasDone;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHasDone</span><span class="params">(<span class="keyword">boolean</span> hasDone)</span> </span>{
+        <span class="keyword">this</span>.hasDone = hasDone;
+    }
+
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> <span class="string">"TodoItem{"</span> +
+                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +
+                <span class="string">", hasDone="</span> + hasDone +
+                <span class="string">'}'</span>;
+    }
+}
+</code></pre>
+<p>  构建文件 build.gradle 内容如下：</p>
+<pre><code class="groovy">group <span class="string">'com.bigsea.gradle'</span>
+version <span class="string">'1.0-SNAPSHOT'</span>
+
+apply <span class="string">plugin:</span> <span class="string">'java'</span>
+
+sourceCompatibility = <span class="number">1.8</span>
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile <span class="string">group:</span> <span class="string">'junit'</span>, <span class="string">name:</span> <span class="string">'junit'</span>, <span class="string">version:</span> <span class="string">'4.12'</span>
+}
+</code></pre>
+<p>执行构建操作：<br><img src="https://ooo.0o0.ooo/2017/06/20/59489f060b276.png" alt=""></p>
+<p>测试生成的jar包</p>
+<pre><code class="bash">D:\test1&gt;java -classpath build/libs/test1-1.0-SNAPSHOT.jar com.bigsea.gradle.test1.App
+</code></pre>
+<blockquote>
+<p><strong><font size="5" color="purple">使用gradle打包java_web项目生成war包</font></strong></p>
+</blockquote>
+<p><1> 构建一个gradle_web项目（<a href="http://localhost:4000/2017/06/20/基于idea的gradle-web项目/" target="_blank" rel="external">详见此处</a>）</1></p>
+<p><2> 在构建文件中添加如下内容：</2></p>
+<pre><code class="bash">apply plugin: <span class="string">'war'</span>
+</code></pre>
+<p><3> 在build文件中点击war选项生成war包；</3></p>
+<p><4> 测试（使用的tomcat）：将war包放入webapp中，启动tomcat,正常访问项目即可；</4></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">构建工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/20/gradle学习笔记-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-基于idea的gradle-web项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/基于idea的gradle-web项目/">基于idea的gradle_web项目</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/20/基于idea的gradle-web项目/" class="archive-article-date">
+  	<time datetime="2017-06-20T01:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>勾选上java + web<br><img src="https://ooo.0o0.ooo/2017/06/20/59487b119f4f3.png" alt=""></p>
+<p>勾选自动构建目录<br><img src="https://ooo.0o0.ooo/2017/06/20/59488ba8a00a6.png" alt=""></p>
+<p>构建完成以后的目录如下</p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/59488c2a48be8.png" alt=""></p>
+<p>创建WEB-INF/web.xml</p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/59488ee73bcbd.png" alt=""></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/5948905c40334.png" alt=""></p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/5948908c0c38e.png" alt=""></p>
+<p>创建完成以后的项目结构：</p>
+<p><img src="https://ooo.0o0.ooo/2017/06/20/594890ca89791.png" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/20/基于idea的gradle-web项目/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-gradle学习笔记-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -162,7 +511,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/18/gradle学习笔记-2/">gradle学习笔记&lt;2&gt;</a>
+      <a class="article-title" href="/2017/06/18/gradle学习笔记-2/">gradle学习笔记&lt;2&gt;--gradle简单脚本分析</a>
     </h1>
   
 
@@ -180,7 +529,10 @@
 
 </blockquote>
 <hr>
-<pre><code class="groovy">apply <span class="string">plugin:</span><span class="string">'java'</span> <span class="comment">//apply函数传入key-value为plugin-java的map集合；</span>
+<pre><code class="groovy">ext {
+    springBootVersion = <span class="string">'1.5.3.RELEASE'</span>
+} <span class="comment">//自定义属性</span>
+apply <span class="string">plugin:</span><span class="string">'java'</span> <span class="comment">//apply函数传入key-value为plugin-java的map集合；</span>
 
 version = <span class="string">'0.1'</span> <span class="comment">//定义version变量;</span>
 
@@ -294,7 +646,7 @@ dependencies {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/17/gradle学习笔记-1/">gradle学习笔记&lt;1&gt;</a>
+      <a class="article-title" href="/2017/06/17/gradle学习笔记-1/">gradle学习笔记&lt;1&gt;--gradle安装和groovy语法介绍</a>
     </h1>
   
 
@@ -688,218 +1040,6 @@ method2(c2);
 
 
   
-    <article id="post-docker镜像下载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/docker镜像下载/">docker镜像下载/卸载</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/13/docker镜像下载/" class="archive-article-date">
-  	<time datetime="2017-06-13T14:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-设置docker使用国内的镜像仓库-阿里—ubantu为例"><a href="#1-设置docker使用国内的镜像仓库-阿里—ubantu为例" class="headerlink" title=" 1.设置docker使用国内的镜像仓库(阿里—ubantu为例)"></a><font color="purple"> 1.设置docker使用国内的镜像仓库(阿里—ubantu为例)</font></h2><h4 id="nbsp-nbsp-针对Docker客户端版本大于1-10的用户-可以通过修改daemon配置文件-etc-docker-daemon-json来使用加速器："><a href="#nbsp-nbsp-针对Docker客户端版本大于1-10的用户-可以通过修改daemon配置文件-etc-docker-daemon-json来使用加速器：" class="headerlink" title="&nbsp;&nbsp; 针对Docker客户端版本大于1.10的用户,可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器："></a>&nbsp;&nbsp; 针对Docker客户端版本大于1.10的用户,可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /etc/docker</div><div class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://zppcg2mi.mirror.aliyuncs.com"</span>]</div><div class="line">&#125;</div><div class="line">EOF</div><div class="line">sudo systemctl daemon-reload</div><div class="line">sudo systemctl restart docker</div></pre></td></tr></table></figure>
-<h4 id="nbsp-nbsp-针对Docker客户端版本小于1-10的用户-以使用下面的命令将配置添加到docker-daemon的启动参数中："><a href="#nbsp-nbsp-针对Docker客户端版本小于1-10的用户-以使用下面的命令将配置添加到docker-daemon的启动参数中：" class="headerlink" title="&nbsp;&nbsp; 针对Docker客户端版本小于1.10的用户,以使用下面的命令将配置添加到docker daemon的启动参数中："></a>&nbsp;&nbsp; 针对Docker客户端版本小于1.10的用户,以使用下面的命令将配置添加到docker daemon的启动参数中：</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 12.04 14.04的用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"DOCKER_OPTS=\"\$DOCKER_OPTS --registry-mirror=https://zppcg2mi.mirror.aliyuncs.com\""</span> | sudo tee -a /etc/default/docker</div><div class="line">sudo service docker restart</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 15.04 16.04的用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /etc/systemd/system/docker.service.d</div><div class="line">sudo tee /etc/systemd/system/docker.service.d/mirror.conf &lt;&lt;-<span class="string">'EOF'</span></div><div class="line">[Service]</div><div class="line">ExecStart=/usr/bin/docker daemon -H fd:// --registry-mirror=https://zppcg2mi.mirror.aliyuncs.com</div><div class="line">EOF</div><div class="line">sudo systemctl daemon-reload</div><div class="line">sudo systemctl restart docker</div></pre></td></tr></table></figure></p>
-<p><br></p>
-<h2 id="2-相关镜像下载"><a href="#2-相关镜像下载" class="headerlink" title="2.相关镜像下载"></a><font color="purple">2.相关镜像下载</font></h2><h3 id="nbsp-nbsp-语法格式"><a href="#nbsp-nbsp-语法格式" class="headerlink" title="&nbsp;&nbsp;语法格式"></a>&nbsp;&nbsp;语法格式</h3><h6 id="nbsp-nbsp-nbsp-拉取镜像"><a href="#nbsp-nbsp-nbsp-拉取镜像" class="headerlink" title="&nbsp;&nbsp;&nbsp; 拉取镜像"></a>&nbsp;&nbsp;&nbsp; 拉取镜像</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker pull[options] NAME [:TAG]</div><div class="line"><span class="comment"># 以下载nginx镜像为例</span></div><div class="line">docker pull hub.c.163.com/library/nginx:latest</div></pre></td></tr></table></figure>
-<h6 id="nbsp-nbsp-nbsp-查看镜像"><a href="#nbsp-nbsp-nbsp-查看镜像" class="headerlink" title="&nbsp;&nbsp;&nbsp; 查看镜像"></a>&nbsp;&nbsp;&nbsp; 查看镜像</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images [options] [REPOSITORY[:TAG]]</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/13/docker镜像下载/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-docker下载安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/docker下载安装/">docker下载安装/卸载</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/13/docker下载安装/" class="archive-article-date">
-  	<time datetime="2017-06-13T14:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a><font color="purple">下载安装<font></font></font></h1><h4 id="nbsp-nbsp-nbsp-方式1-版本较老"><a href="#nbsp-nbsp-nbsp-方式1-版本较老" class="headerlink" title="&nbsp;&nbsp;&nbsp; 方式1:(版本较老)"></a>&nbsp;&nbsp;&nbsp; 方式1:(版本较老)</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install -y docker.io</div></pre></td></tr></table></figure>
-<h4 id="nbsp-nbsp-nbsp-方式2-版本适中-较稳定-推荐"><a href="#nbsp-nbsp-nbsp-方式2-版本适中-较稳定-推荐" class="headerlink" title="&nbsp;&nbsp;&nbsp; 方式2:(版本适中,较稳定,推荐)"></a>&nbsp;&nbsp;&nbsp; 方式2:(版本适中,较稳定,推荐)</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -</div></pre></td></tr></table></figure>
-<h4 id="nbsp-nbsp-nbsp-方式3-最新版的"><a href="#nbsp-nbsp-nbsp-方式3-最新版的" class="headerlink" title="&nbsp;&nbsp;&nbsp; 方式3:(最新版的)"></a>&nbsp;&nbsp;&nbsp; 方式3:(最新版的)</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apt-transport-https  </div><div class="line"><span class="comment"># Add the Docker repository key to your local keychain  </span></div><div class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9  </div><div class="line"><span class="comment"># Add the Docker repository to your apt sources list.  </span></div><div class="line">sudo sh -c <span class="string">"echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"</span>  </div><div class="line"><span class="comment"># update your sources list  </span></div><div class="line">sudo apt-get update  </div><div class="line"> </div><div class="line"><span class="comment"># 之后通过下面命令来安装最新版本的docker：  </span></div><div class="line">apt-get install -y lxc-docker  </div><div class="line"><span class="comment"># 以后更新则：  </span></div><div class="line">apt-get update -y lxc-docker</div></pre></td></tr></table></figure>
-<h4 id="nbsp-nbsp-nbsp-安装完成后的校验"><a href="#nbsp-nbsp-nbsp-安装完成后的校验" class="headerlink" title="&nbsp;&nbsp;&nbsp; 安装完成后的校验"></a>&nbsp;&nbsp;&nbsp; 安装完成后的校验</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看版本</span></div><div class="line">docker -version</div><div class="line"></div><div class="line"><span class="comment"># 启动服务</span></div><div class="line">service docker start</div></pre></td></tr></table></figure>
-<h1 id="启动服务遇到的问题"><a href="#启动服务遇到的问题" class="headerlink" title="启动服务遇到的问题"></a><font color="purple">启动服务遇到的问题<font></font></font></h1><h4 id="nbsp-nbsp-nbsp-问题1"><a href="#nbsp-nbsp-nbsp-问题1" class="headerlink" title="&nbsp;&nbsp;&nbsp; 问题1"></a>&nbsp;&nbsp;&nbsp; 问题1</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker Unit docker.service is masked</div></pre></td></tr></table></figure>
-<h4 id="nbsp-nbsp-nbsp-解决方法"><a href="#nbsp-nbsp-nbsp-解决方法" class="headerlink" title="&nbsp;&nbsp;&nbsp; 解决方法"></a>&nbsp;&nbsp;&nbsp; 解决方法</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">systemctl unmask docker.service </div><div class="line">systemctl unmask docker.socket </div><div class="line">systemctl start docker.service</div></pre></td></tr></table></figure>
-<h1 id="docker卸载"><a href="#docker卸载" class="headerlink" title="docker卸载"></a><font color="purple">docker卸载<font></font></font></h1>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sudo docker -v  </div><div class="line">  </div><div class="line">sudo apt-get remove docker  </div><div class="line">  </div><div class="line">sudo apt-get remove --auto-remove docker </div><div class="line"></div><div class="line"></div><div class="line">sudo apt-get remove --purge lxc-docker</div><div class="line"></div><div class="line">sudo apt-get autoremove --purge</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/13/docker下载安装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-docker学习笔记1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/docker学习笔记1/">docker学习笔记&lt;1&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/13/docker学习笔记1/" class="archive-article-date">
-  	<time datetime="2017-06-13T13:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.docker.com" target="_blank" rel="external">docker官网</a><br><a href="https://dev.aliyun.com/search.html" target="_blank" rel="external">阿里开发者平台</a><br><a href="https://c.163.com/hub#/m/home/" target="_blank" rel="external">网易蜂巢</a></p>
-<h1 id="why-–-使用docker到底有什么好处？"><a href="#why-–-使用docker到底有什么好处？" class="headerlink" title="why? – 使用docker到底有什么好处？"></a>why? – 使用docker到底有什么好处？</h1><p>   <a href="http://www.docker.org.cn/docker/16.html" target="_blank" rel="external">较官方的解释</a><br>   对于我目前现状来说，主要是做为微服务的载体使用</p>
-<h1 id="how-–先来写一个小demo，后续再具体介绍docker的一些具体的内容"><a href="#how-–先来写一个小demo，后续再具体介绍docker的一些具体的内容" class="headerlink" title="how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容"></a>how? –先来写一个小demo，后续再具体介绍docker的一些具体的内容</h1><h2 id="命题如下：使用docker安装一个nginx服务器"><a href="#命题如下：使用docker安装一个nginx服务器" class="headerlink" title="命题如下：使用docker安装一个nginx服务器"></a><font color="purple" size="5">命题如下：使用docker安装一个nginx服务器</font></h2><h3 id="nbsp-nbsp-1-下载安装-卸载docker-Ubantu"><a href="#nbsp-nbsp-1-下载安装-卸载docker-Ubantu" class="headerlink" title="&nbsp;&nbsp;    1 :下载安装/卸载docker(Ubantu)"></a>&nbsp;&nbsp;    1 :<a href="http://localhost:4000/2017/06/13/docker下载安装/" target="_blank" rel="external">下载安装/卸载docker(Ubantu)</a></h3><h3 id="nbsp-nbsp-2-下载docker镜像-使用国内镜像加速"><a href="#nbsp-nbsp-2-下载docker镜像-使用国内镜像加速" class="headerlink" title="&nbsp;&nbsp;    2 :下载docker镜像(使用国内镜像加速)"></a>&nbsp;&nbsp;    2 :<a href="http://localhost:4000/2017/06/13/docker镜像下载/" target="_blank" rel="external">下载docker镜像(使用国内镜像加速)</a></h3><h3 id="nbsp-nbsp-3-运行容器"><a href="#nbsp-nbsp-3-运行容器" class="headerlink" title="&nbsp;&nbsp;    3 :运行容器"></a>&nbsp;&nbsp;    3 :<a href="http://localhost:4000/2017/06/14/运行docker容器/" target="_blank" rel="external">运行容器</a></h3><h3 id="nbsp-nbsp-4-搭建自己的镜像-tomcat-jpress"><a href="#nbsp-nbsp-4-搭建自己的镜像-tomcat-jpress" class="headerlink" title="&nbsp;&nbsp;    4 :搭建自己的镜像(tomcat+jpress)"></a>&nbsp;&nbsp;    4 :<a href="http://localhost:4000/2017/06/16/搭建自己的docker镜像-tomcat-jpress/" target="_blank" rel="external">搭建自己的镜像(tomcat+jpress)</a></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/13/docker学习笔记1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Elk搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/Elk搭建/">Elk搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/12/Elk搭建/" class="archive-article-date">
-  	<time datetime="2017-06-12T00:59:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/Elk搭建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1004,7 +1144,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,11 +1152,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>

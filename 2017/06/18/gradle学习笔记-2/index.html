@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>gradle学习笔记&lt;2&gt; | bigsea&#39;s blog</title>
+  <title>gradle学习笔记&lt;2&gt;--gradle简单脚本分析 | bigsea&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="gradle简单脚本分析    apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  } //使用闭包 {  mavenCentral()  } 做为respositories函数的入参；  depe">
+  <meta name="description" content="gradle简单脚本分析    ext {     springBootVersion = &apos;1.5.3.RELEASE&apos; } //自定义属性 apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  }">
 <meta name="keywords" content="构建工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gradle学习笔记&lt;2&gt;">
+<meta property="og:title" content="gradle学习笔记&lt;2&gt;--gradle简单脚本分析">
 <meta property="og:url" content="http://yoursite.com/2017/06/18/gradle学习笔记-2/index.html">
 <meta property="og:site_name" content="bigsea&#39;s blog">
-<meta property="og:description" content="gradle简单脚本分析    apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  } //使用闭包 {  mavenCentral()  } 做为respositories函数的入参；  depe">
-<meta property="og:updated_time" content="2017-06-18T07:43:12.491Z">
+<meta property="og:description" content="gradle简单脚本分析    ext {     springBootVersion = &apos;1.5.3.RELEASE&apos; } //自定义属性 apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  }">
+<meta property="og:updated_time" content="2017-07-06T02:57:05.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gradle学习笔记&lt;2&gt;">
-<meta name="twitter:description" content="gradle简单脚本分析    apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  } //使用闭包 {  mavenCentral()  } 做为respositories函数的入参；  depe">
+<meta name="twitter:title" content="gradle学习笔记&lt;2&gt;--gradle简单脚本分析">
+<meta name="twitter:description" content="gradle简单脚本分析    ext {     springBootVersion = &apos;1.5.3.RELEASE&apos; } //自定义属性 apply plugin:&apos;java&apos; //apply函数传入key-value为plugin-java的map集合；  version = &apos;0.1&apos; //定义version变量;  respositories {  mavenCentral()  }">
   
     <link rel="alternative" href="/atom.xml" title="bigsea&#39;s blog" type="application/atom+xml">
   
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      gradle学习笔记&lt;2&gt;
+      gradle学习笔记&lt;2&gt;--gradle简单脚本分析
     </h1>
   
 
@@ -183,7 +183,10 @@
 
 </blockquote>
 <hr>
-<pre><code class="groovy">apply <span class="string">plugin:</span><span class="string">'java'</span> <span class="comment">//apply函数传入key-value为plugin-java的map集合；</span>
+<pre><code class="groovy">ext {
+    springBootVersion = <span class="string">'1.5.3.RELEASE'</span>
+} <span class="comment">//自定义属性</span>
+apply <span class="string">plugin:</span><span class="string">'java'</span> <span class="comment">//apply函数传入key-value为plugin-java的map集合；</span>
 
 version = <span class="string">'0.1'</span> <span class="comment">//定义version变量;</span>
 
@@ -275,6 +278,15 @@ dependencies {
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/20/基于idea的gradle-web项目/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于idea的gradle_web项目
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/17/idea安装/" id="article-nav-older" class="article-nav-link-wrap">
@@ -394,7 +406,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gradle</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -402,11 +414,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
